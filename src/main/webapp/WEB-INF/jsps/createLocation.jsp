@@ -91,7 +91,7 @@
         <label for="rural">Rural</label>
     </div>
 
-    <input type="submit" value="Save">
+    <input type="submit" value="save">
 </form>
 ${msg }
 <a href="displayLocations">View All</a>

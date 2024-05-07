@@ -12,7 +12,7 @@ import java.util.Optional;
 public class LocationServiceImpl implements LocationService {
 
     @Autowired
-    private LocationRepository repository;
+    public LocationRepository repository;
 
     @Override
     public Location saveLocation(Location location) {
