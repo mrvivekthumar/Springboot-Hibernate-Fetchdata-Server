@@ -46,19 +46,26 @@ public class LocationController {
 		Location locationSaved = service.saveLocation(location);
 		String msg = "Location Saved with id : " + locationSaved.getId();
 		modelMap.addAttribute("msg", msg);
-
 		emailUtil.sendEmail("vivekthumar334@gmail.com", "Location saved", "Location Saved Succesfully");
-
 		return "createLocation";
 	}
 
 	@RequestMapping("/displayLocations")
 	public String displayLocations(ModelMap modelMap) {
-		List<Location> locations = service.getallLocation();
-		modelMap.addAttribute("locations", locations);
-		return "displayLocations";
+	    try {
+	        List<Location> locations = service.getallLocation();
+	        modelMap.addAttribute("locations", locations);
+	        return "displayLocations";
+	    } catch (Exception e) {
+	        // Log the exception or handle it gracefully
+	        e.printStackTrace(); // or logger.error("An error occurred", e);
+	        modelMap.addAttribute("error", "An unexpected error occurred. Please try again later.");
+	        return "error"; // Assuming you have an error.jsp or error.html page to display error messages
+	    }
 	}
-
+	
+	
+	
 	@RequestMapping("/deleteLocation")
 	public String deleteLocation(@RequestParam("id") int id, ModelMap modelMap) {
 		Location location = new Location();
