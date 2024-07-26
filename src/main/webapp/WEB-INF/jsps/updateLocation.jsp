@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Create Location</title>
+    <title>Update Location</title>
     <style>
         body {
             font-family: Arial, sans-serif;

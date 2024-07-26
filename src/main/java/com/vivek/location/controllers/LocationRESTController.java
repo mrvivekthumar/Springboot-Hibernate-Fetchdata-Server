@@ -1,6 +1,5 @@
 package com.vivek.location.controllers;
 
-
 import com.vivek.location.entities.Location;
 import com.vivek.location.repos.LocationRepository;
 
